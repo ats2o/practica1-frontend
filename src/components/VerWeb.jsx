@@ -10,6 +10,8 @@ function WebList() {
   const [webSelected, setWebSelected] = useState();
   // Declara el estado 'cityWeb' y su función para actualizarlo 'setCityWeb', inicializado como una cadena vacía
   const [cityWeb, setCityWeb] = useState('')
+  // Declara el estado 'activityWeb' y su función para actualizarlo 'setActivityWeb', inicializado como una
+  const [activityWeb, setActivityWeb] = useState('');
   // Declara el estado 'currentWebList' y su función para actualizarlo 'setCurrentWebList', inicializado como un array vacío
   const [currentWebList, setCurrentWebList] = useState([])
   // Utiliza useEffect para ejecutar el código cuando el componente se monta
@@ -36,9 +38,10 @@ function WebList() {
     setCurrentWebList(sortedWeb);
   };
   // Filtra la lista actual de webs según la ciudad ingresada en 'cityWeb'
-  const filter = currentWebList.filter(city =>
-    city.Ciudad.toLowerCase().includes(cityWeb.toLowerCase())
-  )
+  const filter = currentWebList.filter(web =>
+    web.Ciudad.toLowerCase().includes(cityWeb.toLowerCase()) &&
+    web.Actividad.toLowerCase().includes(activityWeb.toLowerCase()) // Filtrado por actividad
+  );
   // Mapea la lista filtrada para crear elementos JSX para cada web
   const ListWeb = filter.map(web => (
     // Crea un div para cada web con su título, ciudad y actividad
@@ -63,9 +66,9 @@ function WebList() {
         </div>
       )}
       {/* Campo de entrada para filtrar por ciudad */}
-      <input type="text" onChange={(e) => setCityWeb(e.target.value)} />
+      <input type="text" onChange={(e) => setCityWeb(e.target.value)} placeholder="Filtrar por ciudad" />
       <br />
-      <br />
+      <input type="text" onChange={(e) => setActivityWeb(e.target.value)} placeholder="Filtrar por actividad" />
       {/* Botón para ordenar la lista de webs */}
       <button onClick={order}>Ordena la pagina</button>
     </div>

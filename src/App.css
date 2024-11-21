@@ -1,42 +1,80 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* Estilo general de la aplicación */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #b6aeae;
+  margin: 0;
+  padding: 20px;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* Contenedor principal */
+.App {
+  max-width: 800px;
+  margin: auto;
+  background: rgb(124, 39, 163);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(115, 41, 124, 0.1);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Estilo del título principal */
+h1 {
+  color: #e4dddd;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+/* Estilo para los encabezados de las ciudades */
+h2 {
+  color: #007BFF;
 }
 
-.card {
-  padding: 2em;
+/* Estilo para los elementos de la lista */
+h3 {
+  cursor: pointer;
+  color: #555;
+  transition: color 0.3s;
 }
 
-.read-the-docs {
-  color: #888;
+h3:hover {
+  color: #007BFF;
+}
+
+/* Estilo de los párrafos */
+p {
+  color: #666;
+}
+
+/* Estilo del formulario */
+input[type="text"] {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #f5f2f2;
+  border-radius: 4px;
+}
+
+/* Estilo del botón */
+button {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Estilo para las listas */
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  background: #e9ecef;
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 4px;
 }
